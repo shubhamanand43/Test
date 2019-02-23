@@ -18,13 +18,24 @@ for i in range(0, int((len(ls)-1)/5)):
     mls.append(ils.copy())
     ils.clear()
 
+#delete
+gm = input("Enter 'u' for Change USN or NAME  or 'm' for change marks : ")
 
-#modify
- = input("Enter Name or Usn (Give USN to be SPECIFIC) to Change it : ")
- = input("Enter Name or Usn (Give USN to be SPECIFIC) to Change it : ")
-serr = True if ki in ls else False
+if gm == "u" :
+    kin = input("Enter Name or Usn (Give USN to be SPECIFIC) to SEARCH it : ")
+    kch = input("Enter Name or Usn (Give USN to be SPECIFIC) to REPLACE it : ")
+elif gm == "m" :
+    kin = input("Enter USN  to Change Marks of it : ")
+    min = input("Enter Marks : ")
+# else:
+#     exit()
+
+serr = True if kin in ls else False
 if serr == True:
-    ls[ls.index(ki)] = e
+    if gm == 'u':
+        ls[ls.index(kin)] = kch
+    elif gm == 'm':
+        ls[ls.index(kin)+1] = min
     f = open(file="student.txt",mode='w')
     f.write("")
     f.close()
@@ -40,9 +51,6 @@ if serr == True:
         f.close()
 else:
     print("CAN'T IDENTYFY RECORD")
-
-#delete
-
 
 def write():
     n = int(input("Enter How Many Record you want to store : "))
@@ -93,8 +101,37 @@ def search(ls,mls):
     else:
         return ch
 
-def update():
-    pass
+def update(ls,mls):
+    gm = input("Enter 'u' for Change USN or NAME  or 'm' for change marks : ")
+
+    if gm == "u" :
+        kin = input("Enter Name or Usn (Give USN to be SPECIFIC) to SEARCH it : ")
+        kch = input("Enter Name or Usn (Give USN to be SPECIFIC) to REPLACE it : ")
+    elif gm == "m" :
+        kin = input("Enter USN  to Change Marks of it : ")
+        min = input("Enter Marks : ")
+
+    serr = True if kin in ls else False
+    if serr == True:
+        if gm == 'u':
+            ls[ls.index(kin)] = kch
+        elif gm == 'm':
+            ls[ls.index(kin)+1] = min
+        f = open(file="student.txt",mode='w')
+        f.write("")
+        f.close()
+        for i in range(0,len(mls)):
+            name = ls[i*5+1]
+            usn = ls[i*5+2]
+            marks = ls[i*5+3]
+            zt = " "
+            st = "|" + name + "|" + usn + "|" + marks + "|"
+            rs = st + zt*(40 - len(st)) + "|\n"
+            f = open(file="student.txt",mode='a')
+            f.write(rs)
+            f.close()
+    else:
+        print("CAN'T IDENTYFY RECORD")
 
 f.close()
 
@@ -113,6 +150,6 @@ f.close()
 #         else:
 #             print(mls[m][:3])
 #     elif( s == "u"):
-#         update()
+#         update(ls,mls)
 #     else:
 #         run = False
