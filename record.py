@@ -81,37 +81,37 @@ class RecordManage():
 
     def alter(self,ls,mls,fn):
         """ # alter data ie change USN or Name at a time or Change Marks giving USN to Search data. """
-            gm = input("Enter 'u' for Change USN or NAME  or 'm' for change marks : ")
-            if gm == "u" :
-                kin = input("Enter Name or Usn (Give USN to be SPECIFIC) to SEARCH it : ")
-                kch = input("Enter Name or Usn (Give USN to be SPECIFIC) to REPLACE it : ")
-            elif gm == "m" :
-                kin = input("Enter USN  to Change Marks of it : ")
-                min = input("Enter Marks : ")
+        gm = input("Enter 'u' for Change USN or NAME  or 'm' for change marks : ")
+        if gm == "u" :
+            kin = input("Enter Name or Usn (Give USN to be SPECIFIC) to SEARCH it : ")
+            kch = input("Enter Name or Usn (Give USN to be SPECIFIC) to REPLACE it : ")
+        elif gm == "m" :
+            kin = input("Enter USN  to Change Marks of it : ")
+            min = input("Enter Marks : ")
 
-            serr = True if kin in ls else False
-            if serr == True:
-                # Assigning the or changeing the values according.
-                if gm == 'u':
-                    ls[ls.index(kin)] = kch
-                elif gm == 'm':
-                    ls[ls.index(kin)+1] = min
-                # it will clear all data in the file
-                f = open(file=fn, mode='w')
-                f.write("")
+        serr = True if kin in ls else False
+        if serr == True:
+            # Assigning the or changeing the values according.
+            if gm == 'u':
+                ls[ls.index(kin)] = kch
+            elif gm == 'm':
+                ls[ls.index(kin)+1] = min
+            # it will clear all data in the file
+            f = open(file=fn, mode='w')
+            f.write("")
+            f.close()
+            # Now again rewrite the Modified data.
+            for i in range(0,len(mls)):
+                name = ls[i*4+1]
+                usn = ls[i*4+2]
+                marks = ls[i*4+3]
+                st = "|" + name + "|" + usn + "|" + marks + "|"
+                rs = st + "\n"
+                f = open(file=fn, mode='a')
+                f.write(rs)
                 f.close()
-                # Now again rewrite the Modified data.
-                for i in range(0,len(mls)):
-                    name = ls[i*4+1]
-                    usn = ls[i*4+2]
-                    marks = ls[i*4+3]
-                    st = "|" + name + "|" + usn + "|" + marks + "|"
-                    rs = st + "\n"
-                    f = open(file=fn, mode='a')
-                    f.write(rs)
-                    f.close()
-            else:
-                print("CAN'T IDENTIFY RECORD")
+        else:
+            print("CAN'T IDENTIFY RECORD")
 
     def delete(self,ls,mls):
         kin = input("Enter Usn to delete that RECORD : ")
