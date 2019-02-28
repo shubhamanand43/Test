@@ -4,22 +4,6 @@ implement the binary search algorithm. Determine the basis paths and using them
 derive different test cases, execute these test cases and discuss the test results.
 
 """
-
-a = []
-n = int(input("Enter No of Elements : "))
-print("Enter Elements ")
-for i in range(0,n):
-    inp = int(input(" -> "))
-    a.append(inp)
-
-print(" Unsorted LIST : "+ str(a))
-a.sort()
-print(" Sorted LIST : "+ str(a))
-
-search(a,ki)
-
-ki = int(input("Enter the key to Search : "))
-
 def search(a,ki):
     low = 0
     high = n-1
@@ -30,7 +14,7 @@ def search(a,ki):
         mid = int((low + high) / 2)
         if (a[mid] == key):
             print("Successful\n")
-            print(f"INDEX OF {key} is : " + str(a.index(key) + 1))
+            print(f"INDEX OF {key} According to Sorted LIST is : " + str(a.index(key) + 1))
             flag = 1
             exit()
 
@@ -41,3 +25,16 @@ def search(a,ki):
 
     if flag == 0:
         print("Unsuccessful")
+
+a = []
+n = int(input("Enter No of Elements : "))
+print("Enter Elements ")
+for i in range(0,n):
+    inp = int(input(" -> "))
+    a.append(inp)
+
+print("Unsorted LIST : "+ str(a))
+a.sort()
+print("Sorted LIST : "+ str(a))
+ki = int(input("Enter the key to Search : "))
+search(a,ki)

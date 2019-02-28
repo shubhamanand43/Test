@@ -1,8 +1,8 @@
 """
-3. Design, develop, code and run the program in any suitable language to
-implement the NextDate function. Analyze it from the perspective of
-boundary value testing, derive different test cases, execute these test cases
-and discuss the test results.
+6. Design, develop, code and run the program in any suitable language to implement
+the Next Date function. Analyze it from the perspective of equivalence class value
+testing, derive different test cases, execute these test cases and discuss the
+test results.
 
 """
 

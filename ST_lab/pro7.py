@@ -1,12 +1,10 @@
 """
-4.
-Design and develop a program in a language of your choice to solve the triangle
-problem defined as follows: Accept three integers which are supposed to be the
-three sides of a triangle and determine if the three values represent an equilateral
-triangle, isosceles triangle, scalene triangle, or they do not form a triangle at all.
-Assume that the upper limit for the size of any side is 10. Derive test cases for your
-program based on equivalence class partitioning, execute the test cases and
-discuss the results.
+7. Design and develop a program in a language of your choice to solve the
+Triangle problem defined as follows: Accept three integers which are supposed
+to be the three sides of a triangle and determine if the three values represent
+an equilateral triangle, isosceles triangle, scalene triangle, or they do not
+form a triangle at all. Derive test cases for your program based on decision-table
+approach, execute the test cases and discuss the results.
 
 """
 

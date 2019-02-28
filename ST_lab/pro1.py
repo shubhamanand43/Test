@@ -15,7 +15,7 @@ a = int(input("Enter A : "))
 b = int(input("Enter B : "))
 c = int(input("Enter C : "))
 
-print(f"A = {a}\t , B = {b}\t, C = {c}")
+print(f"A = {a} , B = {b} , C = {c}")
 
 # to check is it a triangle or not
 
@@ -26,10 +26,10 @@ else:
 
 if (istriangle=='y'):
     if ((a==b) and (b==c)):
-        print("equilateral triangle\n")
+        print("Equilateral triangle")
     elif ((a!=b) and (a!=c) and (b!=c)):
-        print("scalene triangle\n")
+        print("Scalene triangle")
     else:
-        print("isosceles triangle\n")
+        print("Isosceles triangle")
 else:
-    print("Not a triangle\n")
+    print("Not a triangle")
