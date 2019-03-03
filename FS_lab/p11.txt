@@ -1,6 +1,0 @@
-|123       |1233                |12 |12334                         |rterterte           |rghghgh             |
-|gha       |tretre              |12 |gfgfdh                        |grgrt               |grteg               |
-|ghb       |dgttre              |12 |gfgfdh                        |grgrt               |grteg               |
-|ghc       |dtrtre              |12 |gfgfdh                        |grgrt               |grteg               |
-|ghd       |dgtret              |12 |gfgfdh                        |grgrt               |grteg               |
-|wew       |rtthb               |234|frewr                         |wetrtgr             |regr                |

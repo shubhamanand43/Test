@@ -73,6 +73,9 @@ class flr():
         lm = self.ls.copy()
         mt = input("Enter 'n' for Name, 'm' for Marks, 'a' for Address, 'b' for Branch, 'c' for College  CHANGE : ")
         ins = input("Data to Replace -> ")
+        if len(ins) > ld[mt]:
+            print("Data Entered Greater then FIXED LENGTH")
+            exit()
         mo = lm[self.search(usn)]
         mod = mo.split("|")
         mod[sd[mt]] = ins + " "*(ld[mt]-len(ins))
@@ -95,12 +98,12 @@ while(run):
     elif ch == 'w':
         obj.write(fn) # ++
     elif ch == 's':
-        usn = input("Enter USN : ")
+        usn = input("Enter USN {NOT MORE THEN 10 LETTERS}: ")
         usn = usn + " "*(10-len(usn))
         rn = obj.search(usn)
         print("|".join(obj.unpack(rn,rn+1)))
     elif ch == 'm':
-        usn = input("Enter USN : ")
+        usn = input("Enter USN {NOT MORE THEN 10 LETTERS}: ")
         usn = usn + " "*(10-len(usn))
         objm.modify(fn,usn)
     elif ch == 'q':
